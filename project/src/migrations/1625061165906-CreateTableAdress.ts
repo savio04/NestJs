@@ -15,7 +15,6 @@ export class CreateTableAdress1625061165906 implements MigrationInterface {
           {
             name: 'doc_id',
             type: 'varchar',
-            isNullable: true,
           },
           {
             name: 'district',

@@ -15,12 +15,10 @@ export class CreateTableDocSpecialy1624986369949 implements MigrationInterface {
           {
             name: 'doc_id',
             type: 'varchar',
-            isNullable: true,
           },
           {
             name: 'spec_id',
             type: 'varchar',
-            isNullable: true,
           },
           {
             name: 'created_at',
