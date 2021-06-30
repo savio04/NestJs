@@ -1,0 +1,13 @@
+FROM node
+
+WORKDIR /usr/app/saudemais
+
+COPY package.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 1222
+
+CMD ["npm","run", "start:dev"]
