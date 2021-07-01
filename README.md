@@ -26,6 +26,9 @@ $ docker-compose up -d
 ou
 $ sudo docker-compose up -d
 
+# Verifique se a aplicação está rodando corretamente 
+$ sudo docker logs saudemais_api -f
+
 # Execute o seguinte comando para preencher a tabela de especialização dos médicos
 $ npm run seed
 
