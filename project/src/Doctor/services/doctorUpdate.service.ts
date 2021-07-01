@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import Doctor from 'src/models/doctor.model';
 import DoctorSpecialy from 'src/models/doctorSpecialy.model';
@@ -47,7 +47,7 @@ export class DoctorUpdateService {
     let doctor = await this.doctorRepository.findOne({ id });
 
     if (!doctor) {
-      throw new Error('Doctor not existing');
+      throw new HttpException('Doctor not existing', 400);
     }
 
     try {
@@ -60,7 +60,7 @@ export class DoctorUpdateService {
         specialty,
       });
     } catch (err) {
-      throw new Error(`${err.errors}`);
+      throw new HttpException(`${err.errors}`, 400);
     }
 
     doctor = this.doctorRepository.create({

@@ -4,16 +4,7 @@ import Doctor from 'src/models/doctor.model';
 import DoctorSpecialy from 'src/models/doctorSpecialy.model';
 import Specialties from 'src/models/specialties.model';
 import { Repository } from 'typeorm';
-
-interface IRequest {
-  id?: string;
-  name: string;
-  crm: string;
-  tel_fix: string;
-  cell: string;
-  cep: string;
-  specialty?: string;
-}
+import { IDoctorDTO } from '../dto/Doctor.dto';
 
 @Injectable()
 export class DoctorSelectService {
@@ -26,7 +17,7 @@ export class DoctorSelectService {
     private specialtyRepository: Repository<Specialties>,
   ) {}
 
-  async selectDoctor({ name, crm, tel_fix, cell, cep }: IRequest) {
+  async selectDoctor({ name, crm, tel_fix, cell, cep }: IDoctorDTO) {
     const doctorQuery = this.doctorRepository.createQueryBuilder('doc');
 
     if (name) {

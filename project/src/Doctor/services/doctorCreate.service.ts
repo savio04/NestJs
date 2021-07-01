@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import Adress from 'src/models/adress.model';
 import Doctor from 'src/models/doctor.model';
@@ -66,7 +66,7 @@ export class DoctorCreateService {
 
     //Não permite a criação de medicos com o mesmo crm
     if (doctorExisting) {
-      throw new Error('Doctor already existe');
+      throw new HttpException('doctor already existing', 400);
     }
 
     //Verifica o formato dos dados utilizando o Yup
@@ -80,13 +80,13 @@ export class DoctorCreateService {
         specialty,
       });
     } catch (err) {
-      throw new Error(`${err.errors}`);
+      throw new HttpException(`${err.message}`, 400);
     }
 
     //Busca o endereço do medico a partir do cep
     const adressRequest = await getAdress(cep);
     if (adressRequest.message) {
-      throw new Error(`${adressRequest.message}`);
+      throw new HttpException(`${adressRequest.message}`, 400);
     }
 
     //Cria o medico
