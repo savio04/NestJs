@@ -13,10 +13,13 @@ Além disto é vai precisar do docker [Docker](https://www.docker.com/get-starte
 $ git clone <https://github.com/savio04/NestJs.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd nestjs/project
+$ cd NestJs/project
 
 # Instale as dependências
 $ npm install
+
+# Na raiz do projeto (NestJs/project) crie um arquivo .env e copie tudo que está no arquivo .env.exemple
+Outra opção, é renomear o arquivo .env.exemple para .env
 
 # Inicie os containers utilizados no projeto
 $ docker-compose up -d
