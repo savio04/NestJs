@@ -29,9 +29,6 @@ $ sudo docker-compose up -d
 # Execute o seguinte comando para preencher a tabela de especialização dos médicos
 $ npm run seed
 
-# Execute a aplicação
-$ npm run start
-
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000/api> para testar a api
 
 
