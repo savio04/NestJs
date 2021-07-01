@@ -1,6 +1,7 @@
 import {
   Column,
   CreateDateColumn,
+  DeleteDateColumn,
   Entity,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -27,6 +28,9 @@ class Doctor {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @DeleteDateColumn()
+  deletedAt?: Date;
 }
 
 export default Doctor;
