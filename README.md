@@ -26,18 +26,6 @@ $ docker-compose up -d
 ou
 $ sudo docker-compose up -d 
 
-```
-### Faça a conexão com o container do banco pela a sua ferramenta de administração de banco de dados
-![alt text](https://github.com/savio04/NestJs/blob/main/project/github_assets/step-1.jpeg)
-### Crie o banco chamado doctors na sua ferramenta de administração de banco de dados
-![alt text](https://github.com/savio04/NestJs/blob/main/project/github_assets/step-2.jpeg)
-
-```bash
-# Reinicie a aplicação
-$ docker-compose restart
-ou
-$ sudo docker-compose restart
-
 # Verifique se a aplicação está rodando corretamente 
 $ docker logs saudemais_api -f
 ou
@@ -49,4 +37,6 @@ $ npm run seed
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000/api> para testar a api
 
 ```
+### Documentação
+![alt text](https://github.com/savio04/NestJs/blob/main/project/github_assets/doc-api.png)
 ##### 🚧  Api Mais Saúde 🚀 Em construção...  🚧
