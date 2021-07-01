@@ -1,5 +1,6 @@
 import { Controller, Delete, Get, Post, Put, Req, Res } from '@nestjs/common';
 import { Request, Response } from 'express';
+import { ApiBody, ApiCreatedResponse } from '@nestjs/swagger';
 import { DoctorCreateService } from './services/doctorCreate.service';
 import { DoctorDeleteService } from './services/doctorDelete.service';
 import { DoctorSelectService } from './services/doctorSelect.service';
@@ -14,6 +15,10 @@ export class DoctorController {
     private selectService: DoctorSelectService,
   ) {}
   @Post('/client')
+  @ApiCreatedResponse({
+    description: 'Create a new doctor',
+  })
+  @ApiBody({})
   async createDoctor(
     @Req()
     request: Request,
@@ -31,7 +36,7 @@ export class DoctorController {
         specialty,
       });
 
-      return response.status(200).json(doctor);
+      return response.status(201).json(doctor);
     } catch (err) {
       return response.status(400).json({
         message: `${err}`,
@@ -58,7 +63,7 @@ export class DoctorController {
         specialty,
         tel_fix,
       });
-      return response.status(201).json({
+      return response.status(200).json({
         message: 'update done successfully',
       });
     } catch (err) {
@@ -100,6 +105,6 @@ export class DoctorController {
     const { id } = request.params;
     await this.deleteService.deleteDoctor(id);
 
-    return response.status(201).send();
+    return response.status(200).send();
   }
 }
