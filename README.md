@@ -24,13 +24,23 @@ Outra opção, é renomear o arquivo .env.exemple para .env
 # Inicie os containers utilizados no projeto
 $ docker-compose up -d
 ou
-$ sudo docker-compose up -d
+$ sudo docker-compose up -d 
+
+# Faça a conexão com o container do banco pela a sua ferramenta de administração de banco de dados
+![alt text](https://github.com/savio04/NestJs/github_assets/step-1.jpeg)
+
+# Crie o banco chamado doctors na sua ferramenta de administração de banco de dados
+![alt text](https://github.com/savio04/NestJs/github_assets/step-2.jpeg)
+
+# Reinicie a aplicação
+$ docker-compose restart
+ou
+$ sudo docker-compose restart
 
 # Verifique se a aplicação está rodando corretamente 
 $ docker logs saudemais_api -f
 ou
 $ sudo docker logs saudemais_api -f
-
 
 # Execute o seguinte comando para preencher a tabela de especialização dos médicos
 $ npm run seed
