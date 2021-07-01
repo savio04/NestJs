@@ -18,7 +18,7 @@ $ cd nestjs/project
 # Instale as dependências
 $ npm install
 
-# Inicie os containers utilizado no projeto
+# Inicie os containers utilizados no projeto
 $ docker-compose up -d
 ou
 $ sudo docker-compose up -d
