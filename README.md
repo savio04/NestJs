@@ -30,7 +30,7 @@ $ sudo docker-compose up -d
 ### Faça a conexão com o container do banco pela a sua ferramenta de administração de banco de dados
 ![alt text](https://github.com/savio04/NestJs/blob/main/project/github_assets/step-1.jpeg)
 ### Crie o banco chamado doctors na sua ferramenta de administração de banco de dados
-![alt text](https://github.com/savio04/NestJs/github_assets/step-2.jpeg?raw=true)
+![alt text](https://github.com/savio04/NestJs/blob/main/project/github_assets/step-2.jpeg)
 
 ```bash
 # Reinicie a aplicação
